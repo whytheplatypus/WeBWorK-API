@@ -19,3 +19,9 @@
 	- [add/remove *user*](courses.md/#addremove-user)
 - [Problem Render](problem-render.md)  
 - [Library](library.md)
+
+##Authentication
+for requests the require authentication include a token as a parameter
+```
+https://webwork.org/users/?access_token=TOKEN
+```
