@@ -18,7 +18,7 @@ This is the Schema for the standard objects WeBWorK deals with.  Any back end wi
 {
   id: String,
   set_name: String,
-  problems: [[ProblemPool](ProblemPool)],
+  problems: [ProblemPool],
   users_properties: [UserSetProperty],
   course_properties: GlobalSetProperty,
 }
