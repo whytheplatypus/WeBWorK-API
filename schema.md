@@ -14,6 +14,8 @@ This is the Schema for the standard objects WeBWorK deals with.  Any back end wi
 }
 ```
 ##ProblemSet
+references [ProblemPool](#problempool), [UserSetProperty](#usersetproperty), [GlobalSetProperty](#globalsetproperty) 
+
 ```javascript
 {
   id: String,
