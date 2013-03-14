@@ -26,6 +26,7 @@ references [ProblemPool](#problempool), [UserSetProperty](#usersetproperty), [Gl
 }
 ```
 ##Course
+references [User](#user), [ProblemSet](#problemset)
 ```javascript
 {
   id: String,
@@ -74,6 +75,7 @@ references [ProblemPool](#problempool), [UserSetProperty](#usersetproperty), [Gl
 }
 ```
 ##ProblemPool
+references [Problem](#problem)
 ```javascript
 {
   id: String,
@@ -91,6 +93,7 @@ references [ProblemPool](#problempool), [UserSetProperty](#usersetproperty), [Gl
 }
 ```
 ##Library
+references [LibraryProblem](#libraryproblem)
 ```javascript
 {
   name: String,
@@ -98,6 +101,7 @@ references [ProblemPool](#problempool), [UserSetProperty](#usersetproperty), [Gl
 }
 ```
 ##LibraryProblem
+references [Textbook](#textbook)
 ```javascript
 {
   path: String,
