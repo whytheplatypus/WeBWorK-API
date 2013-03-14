@@ -31,3 +31,10 @@
 	- [Problem](schema.md#problem)
 	- [Libary](schema.md#libary)
 	- [ProblemRender](schema.md#problem-render)
+
+
+##Authentication
+for requests the require authentication include a token as a parameter
+```
+https://webwork.org/users/?access_token=TOKEN
+```
