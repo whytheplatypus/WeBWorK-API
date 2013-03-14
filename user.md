@@ -1,68 +1,52 @@
-##User
+#User
 (CRUD)  
-###get all users  
+##get all users  
 ```
 GET /users
-
-return [ User ]
-
-permissions: > Student
 ```
-###get all courses  
+**returns** \[[User](schema.md/#user)\]  
+**permissions** > _Student_
+
+
+##get all courses  
 ```
 GET /users/:user/courses
-
-return [ Course ]
-
-permissions: > Student  || if user==:user then Student
 ```
-###get all problem sets in course  
+**returns** \[[Course](schema.md/#course)\]  
+**permissions** > _Student_  || if user==:user then Student
+
+
+##get all problem sets in course  
 ```
 GET /users/:user/:course/sets
-
-return [ProblemSet] or [UserSet]
-
-permissions: > Student  || if user==:user then Student
 ```
-###get/update a problem set in a course   
+**returns** \[[ProblemSet](schema.md/#problemset)\] or \[[UserSet](schema.md/#userset)\]
+
+
+##get/update a problem set in a course   
 ```
 GET /users/:user/:course/:set
-
-return a single ProblemSet or UserSet
-
-permissions: > Student  || if user==:user then Student
-
 ```
+**returns** [ProblemSet](schema.md/#problemset) or [UserSet](schema.md/#userset)  
 ```
 POST /users/:user/:course/:set
-
-return  the set
-
-permissions: > Student
-
 ```
-###add(assign)/remove problem set  
+**returns** Success/Failure
+
+
+##add(assign)/remove problem set  
 ```
 PUT /users/:user/:course/:set
-
-return  the set
-
-permissions: > Student
 ```
+**returns** Success/Failure  
 ```
 DELETE /users/:user/:course/:set
-
-return  the set
-
-permissions: > Student
-
 ```
-###get grade for a set  
+**returns** Success/Failure  
+
+
+##get grade for a set  
 ```
 GET /users/:user/:course/:set/grade
-
-return a Grade (or a number)
-
-permissions: > Student  || if user==:user then Student
-
 ```
+**returns** a Grade (or a number)
