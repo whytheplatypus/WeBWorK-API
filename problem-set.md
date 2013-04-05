@@ -9,7 +9,7 @@ GET /courses/:course/:problemset/users
 GET /courses/:course/:problemset/users/:user/:problem
 ```
 ```
-PATCH /courses/:course/:problemset/users/:user/:problem
+PUT /courses/:course/:problemset/users/:user/:problem
 ```
 ###add/remove *problem*  
 ```
