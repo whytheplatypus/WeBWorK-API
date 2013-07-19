@@ -21,16 +21,21 @@ return [ Course ]
 permissions: > Student  || if user==:user then Student
 ```
 ###get all problem sets in course  
+
+Get all problem sets for user *user_id* and course *course_id*
 ```
-GET /users/:user/:course/sets
+GET /users/:user_id/:course_id/sets
 
 return [ProblemSet] or [UserSet]
 
 permissions: > Student  || if user==:user then Student
 ```
 ###get/update a problem set in a course   
+
+Get/update the problem set *set_id* for user *user_id* for course *course_id*
+
 ```
-GET /users/:user/:course/:set
+GET /users/:user_id/:course_id/:set_id
 
 return a single ProblemSet or UserSet
 
@@ -38,7 +43,7 @@ permissions: > Student  || if user==:user then Student
 
 ```
 ```
-POST /users/:user/:course/:set
+POST/PATCH /users/:user_id/:course_id/:set_id
 
 return  the set
 
@@ -46,22 +51,27 @@ permissions: > Student
 
 ```
 ###add(assign)/remove problem set  
+
+Add/assign or remove/delete the problem set *set_id* for user *user_id* and course *course_id*
+
 ```
-PUT /users/:user/:course/:set
+PUT /users/:user_id/:course_id/:set_id
 
 return  the set
 
 permissions: > Student
 ```
 ```
-DELETE /users/:user/:course/:set
+DELETE /users/:user_id/:course_id/:set_id
 
 return  the set
 
 permissions: > Student
 
 ```
-###get grade for a set  
+###get grade for a set 
+
+Get the grade for for problem set *set_id* for user *user_id* for course *course_id*
 ```
 GET /users/:user/:course/:set/grade
 
