@@ -1,15 +1,22 @@
 ## Problem Set  
 (CRUD)  
 ###get all users  
+Get all users for course *course_id* and set *set_id*
 ```
-GET /courses/:course/:problemset/users
+GET /courses/:course_id/:set_id/users
+
+Returns [user_id]
+
+Permissions:  > student
 ```
-###get/update *problem* for a *user*  
+###get/update a problem for a user in a problem set
+
+Get problem *problem_id* for user *user_id* with set *set_id* and course *course_id*
 ```
-GET /courses/:course/:problemset/users/:user/:problem
+GET /courses/:course_id/:set_id/users/:user_id/:problem_id
 ```
 ```
-PUT /courses/:course/:problemset/users/:user/:problem
+PUT/PATCH /courses/:course_id/:set_id/users/:user_id/:problem_id
 ```
 ###add/remove *problem*  
 ```
