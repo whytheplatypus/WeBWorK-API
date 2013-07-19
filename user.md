@@ -1,6 +1,8 @@
 ##User
 (CRUD)  
 ###get all users  
+
+get all users (from all courses)
 ```
 GET /users
 
@@ -9,8 +11,10 @@ return [ User ]
 permissions: > Student
 ```
 ###get all courses  
+
+get all courses for user *user_id*
 ```
-GET /users/:user/courses
+GET /users/:user_id/courses
 
 return [ Course ]
 
