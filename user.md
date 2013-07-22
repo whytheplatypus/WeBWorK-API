@@ -10,6 +10,18 @@ return [ User ]
 
 permissions: > Student
 ```
+###get one user  
+
+get user *user_id*
+```
+GET /users/:user_id
+
+return User
+
+permissions: > Student || if user==:user then Student
+```
+
+
 ###get all courses  
 
 get all courses for user *user_id*
@@ -24,7 +36,7 @@ permissions: > Student  || if user==:user then Student
 
 Get all problem sets for user *user_id* and course *course_id*
 ```
-GET /users/:user_id/:course_id/sets
+GET /users/:user_id/courses/:course_id/sets
 
 return [ProblemSet] or [UserSet]
 
@@ -35,7 +47,7 @@ permissions: > Student  || if user==:user then Student
 Get/update the problem set *set_id* for user *user_id* for course *course_id*
 
 ```
-GET /users/:user_id/:course_id/:set_id
+GET /users/:user_id/courses/:course_id/sets/:set_id
 
 return a single ProblemSet or UserSet
 
@@ -43,7 +55,7 @@ permissions: > Student  || if user==:user then Student
 
 ```
 ```
-POST/PATCH /users/:user_id/:course_id/:set_id
+POST/PATCH /users/:user_id/courses/:course_id/sets/:set_id
 
 return  the set
 
@@ -55,14 +67,14 @@ permissions: > Student
 Add/assign or remove/delete the problem set *set_id* for user *user_id* and course *course_id*
 
 ```
-PUT /users/:user_id/:course_id/:set_id
+PUT /users/:user_id/courses/:course_id/sets/:set_id
 
 return  the set
 
 permissions: > Student
 ```
 ```
-DELETE /users/:user_id/:course_id/:set_id
+DELETE /users/:user_id/courses/:course_id/sets/:set_id
 
 return  the set
 
@@ -73,7 +85,7 @@ permissions: > Student
 
 Get the grade for for problem set *set_id* for user *user_id* for course *course_id*
 ```
-GET /users/:user/:course/:set/grade
+GET /users/:user_id/courses/:course_id/sets/:set_id/grade
 
 return a Grade (or a number)
 
