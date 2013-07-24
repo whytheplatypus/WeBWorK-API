@@ -1,46 +1,99 @@
 ## Problem Set  
 (CRUD)  
-###get all users  
-Get all users for course *course_id* and set *set_id*
+###get all sets  
+Get all sets for course *course_id* 
 ```
-GET /courses/:course_id/:set_id/users
+GET /courses/:course_id/sets
 
-Returns [user_id]
+return [ProblemSet]
 
 Permissions:  > student
 ```
-###get/update a problem for a user in a problem set
 
-Get problem *problem_id* for user *user_id* with set *set_id* and course *course_id*
+###Get/Add/Update/Delete a particular set for a particular course
+
+Get set *set_id* for course *course_id*
 ```
-GET /courses/:course_id/:set_id/users/:user_id/:problem_id
+GET /courses/:course_id/sets/:set_id
+
+return ProblemSet
+
+Permission: > Student || Student if user == user_id
 ```
+
+Add set *set_id* to course *course_id*
 ```
-PUT/PATCH /courses/:course_id/:set_id/users/:user_id/:problem_id
+POST /courses/:course_id/sets/:set_id
+
+return ProblemSet
+
+Permission:  > Student
+
 ```
-###add/remove *problem*  
+Update set *set_id* to course *course_id*
 ```
-POST /courses/:course/:problemset/:problem
+PUT/PATCH /courses/:course_id/sets/:set_id
+
+return ProblemSet
+
+Permission:  > Student
 ```
+
+Delete set *set_id* to course *course_id*
+
 ```
-DELETE /courses/:course/:problemset/:problem
+DELETE /courses/:course_id/sets/:set_id
+
+return ProblemSet
+
+Permission:  > Student
 ```
-###add/remove *users*  
+
+### Get/Add/Update/Delete a particular set for a user in a course
+
+Get the ProblemSet properties for set *set_id* for user *user_id* in course *course_id* 
+
 ```
-POST /courses/:course/:problemset/:problem
+GET /courses/:course_id/sets/:set_id/users/:user_id
+
+return UserSet
+
+Permission:  > Student || Student if user==user_id
+
 ```
+
+Add the ProblemSet properties for set *set_id* for user *user_id* in course *course_id* 
+
 ```
-DELETE /courses/:course/:problemset/:problem
+POST /courses/:course_id/sets/:set_id/users/:user_id
+
+return UserSet
+
+Permission:  > Student 
+
 ```
-###get grade for a *user*  
+
+Update the ProblemSet properties for set *set_id* for user *user_id* in course *course_id* 
+
 ```
-GET /courses/:course/:problemset/user/:user/grade
+PUT/PATCH /courses/:course_id/sets/:set_id/users/:user_id
+
+return UserSet
+
+Permission:  > Student 
+
 ```
-###get past answers for a *user*  
+
+Delete the ProblemSet properties for set *set_id* for user *user_id* in course *course_id* 
+
 ```
-GET /courses/:course/:problemset/user/:user/pastanswers
+DELETE /courses/:course_id/sets/:set_id/users/:user_id
+
+return UserSet
+
+Permission:  > Student 
+
 ```
-###regrade a *problem*
-```
-GET /courses/:course/:problemset/regrade/:problem
-```
+
+
+
