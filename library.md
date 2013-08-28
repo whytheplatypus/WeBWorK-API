@@ -1,24 +1,45 @@
 ##Library
-###get problems by (everything)  
+###get problems by subject/subsubject/...
 ```
-GET /library
+GET /library/subject
+
+return [libraryTree];
+
+permissions: > Student
+
 ```
-body contains parameters
+returns a tree containing all problem categories (subject/chapter/subchapter)
+
+###get problems by directory
+
+```
+GET /library/directories
+
+return [libraryTree];
+
+permissions: >Student
+```
+returns a library Tree by directory/subdirectories.
+
 ###search  
 ```
 GET /library/search
+
+return [Problem];
+
+permission: > Student
+
 ```
-body contains parameters
-###get problems by directory  
+body contains parameters (subject, keyword, ....)
+
+returns an array of problems (or problem_id's) that match the sent criteria.
+
+###get local problems
 ```
-GET /library
+GET /library/:course_id
+
+return [libraryTree]  or [Problems];
+
+permission: > Student
 ```
-querystring or body?
-###__CRUD__ local by course  
-```
-no idea
-```
-###get problems  
-```
-GET /library/problems
-```
+returns a tree or a array of problems of all local problems for the course :course_id
