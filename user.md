@@ -83,7 +83,7 @@ permissions: > Student
 ```
 ###get grade for a set 
 
-Get the grade for for problem set *set_id* for user *user_id* for course *course_id*
+Get the grade for problem set *set_id* for user *user_id* for course *course_id*
 ```
 GET /users/:user_id/courses/:course_id/sets/:set_id/grade
 
@@ -92,3 +92,17 @@ return a Grade (or a number)
 permissions: > Student  || if user==:user then Student
 
 ```
+
+###get a grade for a particular problem
+
+Get the grade for problem *problem_id* in set *set_id* for user *user_id* for course *course_id*
+
+```
+GET /users/:user_id/courses/:course_id/sets/:set_id/problems/:problem_id/grade
+
+return a Grade (or a number)
+
+permissions: > Student  || if user==:user then Student
+
+```
+
